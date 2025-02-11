@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT SETUP FOR DISSERTATION
+% Organized and commented for clarity and sharing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% GENERAL FORMATTING  %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set page margins and footnote spacing
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in, footskip=0.5in}
+
+% Set font to Nimbus Sans (Arial equivalent) and ensure proper encoding
+\usepackage{nimbussans}
+\renewcommand*\familydefault{\sfdefault}  % Use sans-serif font (Arial equivalent)
+\usepackage[T1]{fontenc}
+
+% Double-spacing throughout the document
+\usepackage{setspace}
+\setstretch{2.0}
+
+% Disable header and footer lines
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}  % Place page number in the footer
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% CITATION MANAGEMENT  %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Add references in NEJM (New England Journal of Medicine) style
+\usepackage[backend=biber, style=nejm]{biblatex}  
+\addbibresource{chapters/references.bib} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE AND SECTION FORMATTING  %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}  % Control title spacing and formatting
+
+% Format chapter titles
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\centering\fontsize{17}{20}\selectfont}  % Set chapter font size
+  {}  % No chapter number
+  {0pt}  % No space between chapter number and title
+  {\huge}  % Apply \huge size to the title
+
+% Adjust spacing for chapter titles
+\titlespacing*{\chapter}{0pt}{-75pt}{30pt}  % Reduce space above and below chapter title
+
+% Adjust spacing for sections and subsections
+\titlespacing{\section}{0pt}{0pt}{2pt}  
+\titlespacing{\subsection}{0pt}{0pt}{2pt}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE OF CONTENTS  %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tocloft}  % Customize Table of Contents (ToC) formatting
+
+% Adjust ToC title spacing
+\setlength{\cftbeforetoctitleskip}{-30pt}
+\setlength{\cftaftertoctitleskip}{0pt}
+
+% Set ToC font size for chapters, sections, and subsections
+\renewcommand{\cftchapfont}{\normalfont\fontsize{11}{13}\selectfont}  
+\renewcommand{\cftsecfont}{\normalfont\fontsize{11}{13}\selectfont}   
+\renewcommand{\cftsubsecfont}{\normalfont\fontsize{11}{13}\selectfont} 
+
+% Ensure page numbers in ToC are in 11pt font
+\renewcommand{\cftchappagefont}{\normalfont\fontsize{11}{13}\selectfont}
+\renewcommand{\cftsecpagefont}{\normalfont\fontsize{11}{13}\selectfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont\fontsize{11}{13}\selectfont}
+
+% Adjust spacing for List of Figures and List of Tables titles
+\setlength{\cftbeforeloftitleskip}{-50pt}
+\setlength{\cftafterloftitleskip}{0pt}
+\setlength{\cftbeforelottitleskip}{-50pt}
+\setlength{\cftafterlottitleskip}{0pt}
+
+% Reduce spacing for List of Figures title
+\renewcommand{\listfigurename}{List of Figures}
+
+% Adjust Table of Contents depth (1 = Chapters, 2 = Sections, 3 = Subsections)
+\setcounter{tocdepth}{1}
+
+% Set 14pt bold font for chapter titles in ToC
+\renewcommand{\cftchapfont}{\fontsize{14}{16}\selectfont\bfseries}
+\renewcommand{\cftchappagefont}{\fontsize{14}{16}\selectfont\bfseries}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE CUSTOMIZATION  %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{float}
+\usepackage{array}      % Advanced table formatting
+\usepackage{booktabs}   % Professional table borders
+\usepackage{xcolor}     % Color support
+\usepackage{colortbl}   % Color for table cells
+\usepackage{makecell}   % Enhanced cell formatting in tables
+
+% Define alternating row colors for tables
+\definecolor{lightgray}{gray}{0.9}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% NUMBERING FORMATTING  %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define preliminary (Roman) and main body (Arabic) page numbering
+\newcommand{\prelimpages}{
+    \pagenumbering{roman}
+    \setcounter{page}{2}  % Start at ii for copyright page
+}
+\newcommand{\mainbody}{
+    \clearpage
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+}
+
+% Figure and Table numbering (Chapter-based numbering: 1.1, 1.2, etc.)
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+
+% Ensure page numbers start in preliminary pages
+\prelimpages
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% IMAGE AND GRAPHICS  %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}   % Enable image inclusion
+\usepackage{caption}    % Customize captions
+\captionsetup[table]{labelfont={bf},textfont={normalfont}, labelsep={period}}
+\captionsetup[figure]{labelfont={bf}, labelformat={empty},textfont={normalfont}, labelsep={period}, font ={small}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% ADDITIONAL FEATURES  %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{rotating}  % Allow rotating figures/tables for large content
+
+% Ensure proper paragraph spacing
+\setlength{\parskip}{15pt}  % Increase space between paragraphs

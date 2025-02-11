@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main Document
+
+%Here's where you can change the overall order and structure of the document. As default it follows the structure of the UCSF guidelines that you cand fid at https://graduate.ucsf.edu/students/dissertation-thesis-guidelines/content-guidelines. You will notice there's not title page as this has to come from Docusign and you can embed it later
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{report}
+
+% Import external setup file
+\input{setup}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preliminary Pages
+
+%Preliminary pages are defined on their own file under the 'chapters' folder
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+
+\prelimpages 
+
+
+
+\input{chapters/preliminary_pages}   %This enters the preliminary pages into the overall document
+
+
+% Table of Contents (Will include prelim pages without page numbers)
+
+
+% Reset page numbering for the main body with Arabic numerals
+\newpage
+\pagenumbering{arabic}
+
+% Main Body (Appears in TOC with page numbers starting from 1)
+\mainbody
+\input{chapters/introduction}  % If you don't need an introduction you can delete this line.
+\input{chapters/paper1}
+\input{chapters/paper2}
+\input{chapters/paper3}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+
+% References are in NEJM style. Check the bottom of the document for an example of the formating of the references and change it if necessary. Of note, for the references to show up as superscript numbers you need to call them using \textsuperscript{\cite{citation_label}}. 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+
+\end{document}

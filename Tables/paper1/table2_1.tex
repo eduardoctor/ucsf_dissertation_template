@@ -1,0 +1,31 @@
+
+\begin{table}[h!]
+    \vspace{10pt}  % Add vertical space between the previous paragraph and the table
+    \captionsetup{justification=raggedleft}  % Left-align the caption
+    \caption[Cohort charcteristics]{Cohort Characteristics}  % Custom caption with bold Table number
+    \centering
+    \normalsize  % Set the font size to the same size as the main text (size 11)
+    \renewcommand{\arraystretch}{1.3}  % Adjust row height for readability
+    \rowcolors{2}{gray!15}{white}      % Alternating row colors for clarity
+    
+    % Table without the \resizebox
+    \begin{tabular}{p{7cm} p{4cm}<{\centering}}  % Adjust column widths
+        \toprule
+        \rowcolor{white} \textbf{Variable} & \textbf{\makecell{Overall \\ (N=123456)}} \\  
+        \midrule
+        \textbf{Age}, \textit{mean (SD)}   & XX (XX) \\
+        \textbf{Sex}, \textit{n (\%)}      &    \\
+           \hspace{3mm} Male              & XX (XX) \\
+           \hspace{3mm} Female           & XX (XX) \\
+        \textbf{Self-reported race}, \textit{n (\%)}       &     \\
+           \hspace{3mm} White  & XX (XX) \\
+           \hspace{3mm} Black or African American & XX (XX) \\
+           \hspace{3mm} Asian & 3 (2) \\
+           \hspace{3mm} Not reported & X (X) \\
+       \textbf{Other categorical variable}, \textit{n (\%)} &    \\
+          \hspace{3mm} Level1 & XX (XX) \\
+          \hspace{3mm} Level2 & XXX (XX) \\
+       
+        \bottomrule
+    \end{tabular}
+\end{table}
